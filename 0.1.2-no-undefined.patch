@@ -1,0 +1,11 @@
+--- origsrc/moodbar-0.1.2/configure.ac	2006-10-12 00:43:45.000000000 -0500
++++ src/moodbar-0.1.2/configure.ac	2010-05-14 01:02:20.172176500 -0500
+@@ -150,7 +150,7 @@ fi
+ AC_SUBST(plugindir)
+ 
+ dnl set proper LDFLAGS for plugins
+-GST_PLUGIN_LDFLAGS='-module -avoid-version -export-symbols-regex [_]*\(gst_\|Gst\|GST_\).*'
++GST_PLUGIN_LDFLAGS='-module -avoid-version -export-symbols-regex [_]*\(gst_\|Gst\|GST_\).* -no-undefined'
+ AC_SUBST(GST_PLUGIN_LDFLAGS)
+ 
+ AC_OUTPUT(Makefile m4/Makefile analyzer/Makefile plugin/Makefile)

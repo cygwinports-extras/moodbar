@@ -1,0 +1,22 @@
+inherit gstreamer
+
+DESCRIPTION="Analyses moods of music files"
+HOMEPAGE="http://amarok.kde.org/wiki/Moodbar"
+SRC_URI="http://pwsp.net/~qbob/${P}.tar.gz"
+PATCH_URI="
+	mirror://portage/media-sound/${PN}/files/${P}-gthread_init.patch
+	0.1.2-no-undefined.patch
+"
+
+PKG_NAMES="${PN} gstreamer0.10-plugins-${PN}"
+PKG_HINTS="setup plugin"
+moodbar_CONTENTS="usr/bin/ usr/share/"
+gstreamer0_10_plugins_moodbar_CONTENTS="usr/lib/gstreamer-0.10/"
+
+src_compile() {
+	cd ${S}
+	gstreamer_autoreconf
+	cd ${B}
+	cygconf --disable-static
+	cygmake
+}

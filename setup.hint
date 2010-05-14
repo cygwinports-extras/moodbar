@@ -1,0 +1,5 @@
+category: Audio
+requires: libgcc1 libglib2.0_0 libgstreamer0.10_0 gstreamer0.10-plugins-base gstreamer0.10-plugins-moodbar
+sdesc: "Music mood analyzer"
+ldesc: "Moodbar shows you the mood of a track, which you can then use to 
+figure out when something interesting happens in the song."
